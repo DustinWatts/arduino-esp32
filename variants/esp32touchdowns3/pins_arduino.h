@@ -21,12 +21,12 @@ static const uint8_t SDA = 17;
 static const uint8_t SCL = 18;
 
 // SPI
-static const uint8_t MOSI  = 15;
-static const uint8_t SDO   = 15;
-static const uint8_t MISO  = 4;
-static const uint8_t SDI   = 4;
+static const uint8_t MOSI  = 4;
+static const uint8_t SDO   = 4;
+static const uint8_t MISO  = 15;
+static const uint8_t SDI   = 15;
 static const uint8_t SCK   = 2;
-static const uint8_t SS    = 16;
+static const uint8_t SS    = 38;
 
 
 // Voltages
