@@ -3,14 +3,20 @@
 
 #include <stdint.h>
 
-#define USB_VID 0x303D
+#define USB_VID 0x303a
 #define USB_PID 0x1001
+
 #define USB_MANUFACTURER "Dustin Watts"
 #define USB_PRODUCT "ESP32 TouchDown S3"
+#define USB_SERIAL ""
 
-#define EXTERNAL_NUM_INTERRUPTS 0
-#define NUM_DIGITAL_PINS        0
-#define NUM_ANALOG_INPUTS       0
+#define EXTERNAL_NUM_INTERRUPTS 46
+#define NUM_DIGITAL_PINS        48
+#define NUM_ANALOG_INPUTS       20
+
+#define analogInputToDigitalPin(p)  (((p)<20)?(analogChannelToDigitalPin(p)):-1)
+#define digitalPinToInterrupt(p)    (((p)<48)?(p):-1)
+#define digitalPinHasPWM(p)         (p < 46)
 
 // UART
 static const uint8_t TX = 43;
@@ -28,9 +34,11 @@ static const uint8_t SDI   = 15;
 static const uint8_t SCK   = 2;
 static const uint8_t SS    = 38;
 
-
 // Voltages
 #define BAT_VOLTS     2 // VBAT (100K/100K divider)
+
+// Speaker Pin
+static const uint8_t SPEAKER_PIN = 47;
 
 // JTAG Header
 #define MTCK         39
